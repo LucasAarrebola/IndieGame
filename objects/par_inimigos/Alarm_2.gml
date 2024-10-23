@@ -1,0 +1,1 @@
+/// @description Barra de vida

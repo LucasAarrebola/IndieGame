@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_morte_slime",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":0,
+  "bitRate":16,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.611969,
+  "name":"snd_morte_slime",
+  "parent":{
+    "name":"Sons",
+    "path":"folders/Sons.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":5512,
+  "soundFile":"snd_morte_slime.wav",
+  "type":0,
+  "volume":0.12,
+}
