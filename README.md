@@ -20,5 +20,5 @@ Sistema de Equipamentos e Habilidades: O jogador poderá encontrar novos equipam
 habilidades únicas que ampliam o leque de opções de combate.
 
 Status do Desenvolvimento
-Atualmente, o projeto está em desenvolvimento visual, com foco em animar alguns inimigos como esqueletos, golens, etc. 
+Atualmente, o projeto está em desenvolvimento visual, com foco em animar alguns inimigos como esqueletos, golens e tambem Boss para desafiar o jogador. 
 Estou trabalhando em melhorias contínuas e novas implementações conforme o projeto avança.
