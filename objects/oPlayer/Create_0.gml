@@ -1,4 +1,4 @@
- event_inherited();
+event_inherited();
 
 enum Armas{
 	Espada,
@@ -54,10 +54,10 @@ max_estamina[9] = 300;
 max_estamina[10] = 350;
 estamina = max_estamina[level];
 
-max_vida[1] = 1;
-max_vida[2] = 25;
-max_vida[3] = 35;
-max_vida[4] = 40;
+max_vida[1] = 10;
+max_vida[2] = 20;
+max_vida[3] = 25;
+max_vida[4] = 35;
 max_vida[5] = 50;
 max_vida[6] = 60;
 max_vida[7] = 70;

@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_itens_demon",
   "bboxMode":0,
-  "bbox_bottom":14,
+  "bbox_bottom":15,
   "bbox_left":1,
   "bbox_right":13,
   "bbox_top":2,

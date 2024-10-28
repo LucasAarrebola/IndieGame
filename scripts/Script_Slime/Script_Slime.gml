@@ -157,6 +157,24 @@ function scr_slime_morte(){
 	if fim_da_animacao(){
 		oPlayer.xp += xp_morte;
 		audio_play_sound(snd_morte_slime, 1, false);
+		
+		var chance_drop = irandom_range(0, 100);
+		
+	    if (chance_drop < 100) { // 30% de chance de dropar um item
+	        var item_drop = instance_create_layer(x, y, "Instances", obj_item);
+			var arma_ = choose(Armas_Inv.Espada, Armas_Inv.Arco)
+	        // Configurações do item dropado
+	        // Escolha aleatória do tipo de arma a ser dropada
+	        item_drop.tipo_arma = arma_;
+	        item_drop.sprite_index = spr_itens;
+	        item_drop.quantidade = irandom(2) + 1; // Quantidade(nivel) aleatória entre 1 e 3
+			if arma_ = Armas_Inv.Espada{
+				item_drop.image_index = 0;
+			}else{
+				item_drop.image_index = 1;
+			}
+	    }
+		
 		instance_destroy();
 	}
 }

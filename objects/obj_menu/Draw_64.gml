@@ -1,4 +1,4 @@
-fontPixel = font_add_sprite_ext(spr_fontnumber, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ()", true, 0);
+ fontPixel = font_add_sprite_ext(spr_fontnumber, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ()", true, 0);
 
 var _guil = display_get_gui_width();
 var _guia = display_get_gui_height();
@@ -25,9 +25,10 @@ if inventario = true{
 			draw_sprite_ext(spr_inv_select, 0, _slotsx, _slotsy, escala, escala, 0, c_white, image_alpha);
 			
 			if keyboard_check_pressed(ord("V")){
-				var _inst = instance_create_layer(oPlayer.x, oPlayer.y - 8,"Instances", obj_item)
+				var _inst = instance_create_layer(oPlayer.x, oPlayer.y,"Instances", obj_item)
 				_inst.sprite_index = grid_items[# Infos_Inv.Sprite, i];
-				_inst.image_index = grid_items[# Infos_Inv.Item, i];
+				_inst.image_index = grid_items[# 0, i];
+				_inst.tipo_arma = grid_items[# Infos_Inv.Item, i];
 				_inst.quantidade = grid_items[# Infos_Inv.Quantidade, i]; 
 				
 				if item_select == grid_items[# Infos_Inv.Item, i] and pos_select == i{
@@ -71,7 +72,8 @@ if inventario = true{
 						pos_select = -1;
 					}
 					//3 - Caso o slot selecinado ja tenha um item e iremos trocalos as posições
-					else if grid_items[# Infos_Inv.Item, pos_select] != grid_items[# Infos_Inv.Item, i] or grid_items[# Infos_Inv.Sprite, pos_select] != grid_items[# Infos_Inv.Sprite, i]{
+					else if grid_items[# Infos_Inv.Item, pos_select] != grid_items[# Infos_Inv.Item, i] or grid_items[# Infos_Inv.Sprite, pos_select] != grid_items[# Infos_Inv.Sprite, i]
+					{
 						var _item = grid_items[# Infos_Inv.Item, i];
 						var _quantidade = grid_items[# Infos_Inv.Quantidade, i];
 						var _spr = grid_items[# Infos_Inv.Sprite, i];
@@ -86,11 +88,28 @@ if inventario = true{
 						
 						item_select = -1;
 						pos_select = -1;
+					//5- Caso o slot selecionado seja o mesmo slot
 					}else if item_select == grid_items[# Infos_Inv.Item, i] and pos_select == i{
 							item_select = -1;
 							pos_select = -1;
+					//6- Caso o slot selecionado seja igual porem quantidades(niveis) diferentes
+					}else if grid_items[# Infos_Inv.Sprite, pos_select] == grid_items[# Infos_Inv.Sprite, i] and grid_items[# Infos_Inv.Quantidade, i] != grid_items[# Infos_Inv.Quantidade, pos_select] 
+					{
+						var _item = grid_items[# Infos_Inv.Item, i];
+						var _quantidade = grid_items[# Infos_Inv.Quantidade, i];
+						var _spr = grid_items[# Infos_Inv.Sprite, i];
+						
+						grid_items[# Infos_Inv.Item, i] = grid_items[# Infos_Inv.Item, pos_select];
+						grid_items[# Infos_Inv.Quantidade, i] = grid_items[# Infos_Inv.Quantidade, pos_select];
+						grid_items[# Infos_Inv.Sprite, i] = grid_items[# Infos_Inv.Sprite, pos_select];
+						
+						grid_items[# Infos_Inv.Item, pos_select] = _item;
+						grid_items[# Infos_Inv.Quantidade, pos_select] = _quantidade;
+						grid_items[# Infos_Inv.Sprite, pos_select] = _spr;
+						
+						item_select = -1;
+						pos_select = -1;
 					}
-					
 				}
 			}
 		}
@@ -108,7 +127,7 @@ if inventario = true{
 		}
 		ix++;
 		if ix >= slots_h{
-			ix = 0;
+			ix = 0; 
 			iy++
 		}
 	}
