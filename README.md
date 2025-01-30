@@ -1,5 +1,5 @@
 # Indie Game - The Rabbit's Legacy: A Hero's Tale
-Bem-vindo(a) ao repositório oficial do meu jogo indie, The Rabbit's Legacy: A Hero's Tale! Este projeto está sendo desenvolvido de forma independente e é uma jornada criativa que 
+Bem-vindo(a) ao repositório oficial The Rabbit's Legacy: A Hero's Tale, Este projeto está sendo desenvolvido de forma independente e é uma jornada criativa que 
 combina paixão por games e desenvolvimento de software.
 
 Sobre o Jogo
